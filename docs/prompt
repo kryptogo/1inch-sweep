@@ -1,0 +1,160 @@
+For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+
+When using client-side hooks (useState and useEffect) in a component that's being treated as a Server Component by Next.js, always add the "use client" directive at the top of the file.
+
+Do not write code that will trigger this error: "Warning: Extra attributes from the server: %s%s""class,style"
+
+By default, this template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+
+Use icons from lucide-react for logos.
+
+Use stock photos from unsplash where appropriate, only valid URLs you know exist.
+
+# CryptoSweep Implementation Roadmap
+
+## Phase 1: MVP with Limited Chain Support (2-3 weeks)
+
+### Backend Foundation
+1. **Set up blockchain scanning infrastructure**
+   - Start with 2 major chains only (Ethereum + BSC)
+   - Implement wallet balance checking via public RPC endpoints
+   - Build token detection for top 20 tokens by market cap only
+
+2. **Basic swap integration**
+   - Integrate with a single DEX aggregator (like 1inch or 0x Protocol)
+   - Support only USDT/USDC as destination tokens
+   - Implement basic fee collection mechanism (1%)
+
+3. **Simple authentication**
+   - Implement wallet connection via MetaMask and WalletConnect
+   - Store minimal user session data
+   - Create simple API endpoints for frontend interactions
+
+### Frontend Development
+1. **Streamlined UI**
+   - Implement only critical screens from your mockup
+   - Simplify the asset selection interface
+   - Build real transaction signing flow
+
+2. **Real wallet integration**
+   - Connect to actual wallets (MetaMask/WalletConnect)
+   - Display real balances for supported chains/tokens
+   - Implement transaction signing process
+
+3. **KryptoGO wallet promotion**
+   - Add basic referral link to KryptoGO wallet
+   - Implement post-conversion promotional screen
+
+## Phase 2: Expand Functionality (2-3 weeks after Phase 1)
+
+### Additional Chain Support
+1. **Add 3 more chains**
+   - Integrate Polygon, Avalanche, and Fantom
+   - Optimize RPC calls for faster scanning
+   - Add chain-specific token lists
+
+2. **Enhanced token detection**
+   - Implement "dormancy detection" based on last transaction date
+   - Add support for LP tokens and other DeFi positions
+   - Improve token price accuracy
+
+3. **Cross-chain bridging**
+   - Integrate with a bridging solution (like Socket or Axelar)
+   - Enable direct cross-chain conversions
+   - Optimize gas fees for multi-step operations
+
+### UI Enhancements
+1. **Improved asset discovery**
+   - Add sorting/filtering of discovered assets
+   - Implement batch selection functionality
+   - Show historical price data for discovered tokens
+
+2. **User feedback loops**
+   - Add transaction status tracking
+   - Implement notification system for completed conversions
+   - Create simple analytics to track conversion patterns
+
+## Phase 3: Optimization and Growth (Ongoing)
+
+### Performance Improvements
+1. **Speed optimizations**
+   - Implement caching for commonly accessed data
+   - Use WebSocket connections for real-time updates
+   - Add background scanning for faster user experience
+
+2. **Cost optimizations**
+   - Batch transactions where possible
+   - Implement gas optimization strategies
+   - Find cheaper routes for exotic tokens
+
+### User Acquisition
+1. **Deeper KryptoGO integration**
+   - Implement SDK/API integration with KryptoGO wallet
+   - Create special offers for KryptoGO users
+   - Build direct in-app redirects
+
+2. **Analytics and improvement**
+   - Track user conversion flows and identify dropoff points
+   - A/B test different UI configurations
+   - Collect user feedback on most wanted features
+
+## Development Approach
+
+### Fast Iteration Methodology
+1. **Weekly releases**
+   - Set up CI/CD pipeline for frequent deployments
+   - Release new features every week
+   - Maintain a public roadmap for user feedback
+
+2. **Feature prioritization**
+   - Focus on features that directly impact conversion rate
+   - Prioritize chains/tokens based on user wallet data
+   - Defer complex features that don't add immediate value
+
+3. **Technical shortcuts for speed**
+   - Use hosted node providers rather than running your own
+   - Leverage existing DEX aggregators instead of direct DEX integrations
+   - Use serverless architecture to minimize infrastructure management
+
+### Testing Strategy
+1. **Real user testing**
+   - Get 5-10 power users for early testing
+   - Conduct weekly feedback sessions
+   - Implement analytics to track user behavior
+
+2. **Progressive rollout**
+   - Start with whitelisted users
+   - Expand to friends and family
+   - Open to public with usage limits
+
+### Technical Recommendations
+1. **Tech stack**
+   - Frontend: React + Ethers.js/Web3.js
+   - Backend: Node.js with serverless functions
+   - Data: MongoDB for user data, Redis for caching
+
+2. **Third-party services**
+   - Use Moralis, Alchemy, or Infura for blockchain data
+   - Integrate CoinGecko or similar for token pricing
+   - Consider Tenderly for transaction monitoring
+
+3. **Security considerations**
+   - Never request or store private keys
+   - Implement proper transaction signing flows
+   - Add rate limiting and basic security measures
+
+## Critical Success Metrics
+
+1. **User acquisition**
+   - Number of wallet connections
+   - Conversion rate from landing page to connection
+
+2. **Asset conversion**
+   - Value of assets discovered
+   - Percentage of discovered assets converted
+   - Average fee collected per user
+
+3. **KryptoGO conversions**
+   - Click-through rate to KryptoGO wallet
+   - Completed downloads/installs
+   - Revenue share from referrals
